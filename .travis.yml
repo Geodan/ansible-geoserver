@@ -1,0 +1,29 @@
+---
+language: python
+python: "2.7"
+
+sudo: required
+
+services:
+  - docker
+
+addons:
+  apt:
+    packages:
+    - python-pip
+    - curl
+
+before_install:
+- docker pull kartoza/geoserver
+- docker run --name "geoserver" --detach --publish 8080:8080 kartoza/geoserver
+
+install:
+  - pip install ansible
+  - ansible --version
+  - printf '[defaults]\nroles_path=../' > ansible.cfg
+
+script:
+  - ansible-playbook tests/test.yml -i tests/inventory
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
