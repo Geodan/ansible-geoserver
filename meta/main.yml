@@ -1,0 +1,32 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: GeodanMaps team
+  description: Ansible role that configures GeoServer (workspaces, datastores, layers, etc)
+  company: Geodan BV
+
+  license: MIT
+
+  min_ansible_version: 1.2
+
+  platforms:
+    - name: GenericBSD
+      versions:
+        - all
+    - name: GenericLinux
+      versions:
+        - all
+    - name: GenericUNIX
+      versions:
+        - all
+    - name: MacOSX
+      versions:
+        - all
+    - name: Windows
+      versions:
+        - all
+
+  galaxy_tags:
+    - geoserver
+
